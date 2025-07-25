@@ -77,17 +77,15 @@ public class FilePathFinder{
                 line= line.split(": ",2).length==2 ? line.split(": ",2)[1]:"";
                 System.out.println("line : "+ line );
                 if(line.isEmpty()) continue;
-                if(line !=null) {
+                if(!line.isEmpty()) {
                     Files.copy(Paths.get(line),
-                            Paths.get(targetDir.toString()+"/"+Paths.get(line).getFileName().toString()),
+                            Paths.get(targetDir.toString()+"/"+Paths.get(line).getFileName()),
                             StandardCopyOption.REPLACE_EXISTING);
                 }
             }
         }catch (IOException e){
             e.printStackTrace();
         }
-
-
         return reader.toString();
     }
 }
