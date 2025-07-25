@@ -1,3 +1,4 @@
+
 package com.project.security.model;
 
 import lombok.AllArgsConstructor;

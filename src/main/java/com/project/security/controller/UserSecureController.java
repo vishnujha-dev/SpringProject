@@ -34,7 +34,7 @@ public class UserSecureController {
     @GetMapping("/{customerId}")
     @PreAuthorize("(hasAuthority('ROLE_ADMIN') or hasRole('NORMAL')) and hasAuthority('READ_USER')")
     //@PreAuthorize("hasRole('ADMIN')")
-   // @PreAuthorize("hasAuthority('READ_USER')")
+    // @PreAuthorize("hasAuthority('READ_USER')")
     public UserInfo getCustomer(@PathVariable("customerId") String customerId){
         return userDetailService.getUserUserNameOrID(customerId);
     }
